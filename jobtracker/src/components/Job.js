@@ -1,4 +1,5 @@
 import React from 'react'
+import './job.css'
 
 const Job = (props) => {
     //Each job should have:
@@ -13,16 +14,16 @@ const Job = (props) => {
         // Link to Listing/Post
         // Notes
   return (
-    <div>
-        <p>Job ID: {props.job.iD}</p>
-        <p>Position: {props.job.position}</p>
-        <p>Company: {props.job.company}</p>
-        <p>Application Status: {props.job.status[0]}</p>
-        <p>Date Applied: {props.job.dateApplied}</p>
-        <p>Job Location: {props.job.location[0]}</p>
-        <p>Company Location: {props.job.companyLocation}</p>
-        <p>Link To Posting: {props.job.postLink}</p>
-        <p>Notes: {props.job.notes}</p>
+    <div className='jobContainer'>
+        <p>{props.job.iD}</p>
+        <p>{props.job.position}</p>
+        <p>{props.job.company}</p>
+        <p>{props.job.status[0]}</p>
+        <p>{props.job.dateApplied}</p>
+        <p>{props.job.location[0]}</p>
+        <p>{props.job.companyLocation}</p>
+        <p>{props.job.postLink}</p>
+        <p>{props.job.notes}</p>
     </div>
   )
 }

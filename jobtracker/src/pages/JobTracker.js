@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Job from '../components/Job';
+import './jobtracker.css'
 
 const JobTracker = () => {
     //Store jobs in State array.
@@ -48,6 +49,17 @@ const JobTracker = () => {
     <div>
         <h1>JobTracker</h1>
         <button onClick={addJob}>Add Job</button>
+        <div className='JobHeaders'>
+        <p>Job ID</p>
+        <p>Position</p>
+        <p>Company</p>
+        <p>Application Status</p>
+        <p>Date Applied</p>
+        <p>Job Location</p>
+        <p>Company Location</p>
+        <p>Link To Posting</p>
+        <p>Notes</p>
+        </div>
         {jobList.map(result => (
             <Job key={result.iD} job={result}></Job>
         ))}
