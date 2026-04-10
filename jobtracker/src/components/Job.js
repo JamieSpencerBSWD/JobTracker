@@ -9,10 +9,21 @@ const Job = (props) => {
         // Status
         // Date Applied
         // Location
+        // Company Location
         // Link to Listing/Post
         // Notes
   return (
-    <div>Job {props.jobtitle}</div>
+    <div>
+        <p>Job ID: {props.job.iD}</p>
+        <p>Position: {props.job.position}</p>
+        <p>Company: {props.job.company}</p>
+        <p>Application Status: {props.job.status[0]}</p>
+        <p>Date Applied: {props.job.dateApplied}</p>
+        <p>Job Location: {props.job.location[0]}</p>
+        <p>Company Location: {props.job.companyLocation}</p>
+        <p>Link To Posting: {props.job.postLink}</p>
+        <p>Notes: {props.job.notes}</p>
+    </div>
   )
 }
 

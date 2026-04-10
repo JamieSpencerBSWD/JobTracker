@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Job from '../components/Job';
 
 const JobTracker = () => {
@@ -8,15 +8,49 @@ const JobTracker = () => {
 
     //The role of this file is to display, Edit, Add, Remove, and Update Job Listings.
     //It should store each job listing into a database (like sqlite, or Mongo)
+
+    const [jobList, setJobList] = useState([])
+
+    
+
     useEffect(() => {
       return () => {
         
       }
     }, [])
-    
+
+    const addJob = () => {
+        let jobID = jobList.length;
+        let dateTime = new Date(Date.now());
+        setJobList([...jobList, {
+        // id
+        iD: jobID,
+        // Position/Title
+        position: "Position",
+        // Company
+        company: "Company",
+        // Status
+        status: ["Applied", "Reached Out", "Interview", "Offer", "Denied - closed door", "Denied - open door"],
+        // Date Applied
+        dateApplied: dateTime.toString(),
+        // Location
+        location: ["Remote", "In Person", "Hybrid"],
+        // Company Location
+        companyLocation: "Company Location",
+        // Link to Listing/Post
+        postLink: "www.job.com/jobs?=12345",
+        // Notes
+        notes: "Notes go here",
+        }])
+        console.log(dateTime)
+    }
   return (
-    <div>JobTracker
-        <Job jobtitle="This Is The Jobs Title"/>
+    <div>
+        <h1>JobTracker</h1>
+        <button onClick={addJob}>Add Job</button>
+        {jobList.map(result => (
+            <Job key={result.iD} job={result}></Job>
+        ))}
     </div>
   )
 }
