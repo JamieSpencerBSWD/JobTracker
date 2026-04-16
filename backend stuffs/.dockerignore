@@ -1,0 +1,5 @@
+# Ignores anything you put in here (like nasty smelly Node Modules)
+
+node_modules
+
+.env

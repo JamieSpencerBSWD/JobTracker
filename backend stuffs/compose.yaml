@@ -1,0 +1,28 @@
+services:
+  frontend:
+  backend:
+    build: .
+    ports:
+      - '9090:9090'
+  db:
+    image: postgresql:latest
+    #image: image_name:latest
+    # image is used because were not using a dockerfile for this database like a CHUMP
+    # instead, were using a base image of the database we want to use :)
+    # Change all this Postgres stuff to whatever database you wanna use
+    environment:
+      POSTGRES_USER:user
+      POSTGRES_PASSWORD:pass
+      POSTGRES_DB:mydb
+      # - name=value
+      # USERNAME:user
+      # PASSWORD:pass
+      # DATABASE:mydb
+    volumes:
+    # any volumes you need
+      - postgres_data:/var/lib/postgresql/data 
+volumes:
+  postgres_data: #this tells docker to create a volume titled 'postgres_data'
+  # this tells docker "hey we have this volume, this is how we connect to is"
+  # in the terminal, run 'docker compose up' and docker will build it :P
+  # run 'docker compose down' to shut down the terminal

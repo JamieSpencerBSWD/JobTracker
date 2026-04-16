@@ -1,0 +1,15 @@
+Making the database with Postgres i think
+
+Database tables:
+Job
+
+Database row:
+ID - Number or Hash
+Position - String 
+Company - String 
+Status - Array :"Applied, Reached Out, Interview Scheduled, Offer, Denied - Closed Door, Denied - Open Door
+Date Applied - DateTime String
+Location - String
+Company Location - String
+Post Link - String 
+Notes - String
