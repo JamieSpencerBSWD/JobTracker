@@ -1,0 +1,35 @@
+<h1>Hello!</h1>
+<h3>Welcome to the API for my Job Tracker project.</h3>
+<p>Here, I can Create, Read, Update, or Delete Job Applications</p>
+<p>I mostly use it for keeping track of jobs I've applied to :P </p>
+<p>The Structure of a job is as follows:<pre><code>[
+    {
+        "id": "3c9a7f21-52b4-11f1-9c3a-1f6d8e4b2a90",
+        "position": "test",
+        "company": "test",
+        "application_status": "applied",
+        "date_applied": "2026-04-25T19:54:22.000Z",
+        "job_location": "remote",
+        "company_location": "test",
+        "post_link": "test",
+        "notes": "test"
+    },
+    {
+        "id": "7e4d2b58-19c0-11f1-a8f5-6d3c9b2e1f47",
+        "position": "test",
+        "company": "test",
+        "application_status": "applied",
+        "date_applied": "2026-04-25T19:54:22.000Z",
+        "job_location": "remote",
+        "company_location": "test",
+        "post_link": "test",
+        "notes": "test"
+    }
+]</code></pre></p>
+<p>You can use this APi by going to /jobs to see all the current jobs im keeping track of</p>
+<p>You can also use things like Delete, Patch, or Get using a specific ID, by using /jobs/(:id)</p>
+<p>Job ID's are managed by MYSQL, and are randomly generated UUID's. "date_applied" and "date_updated" are also managed by MySQL as well as the backend</p>
+<p>Things like "application_status" and "job_location" are Enumerators, meaning they can only take specific arguments.</p>
+<p>for "application_status", you can only do ['applied', 'reached uut', 'interview scheduled', 'offer', 'denied - closed door', 'denied - open door']</p>
+<p>for "job_location" you can only do ['remote', 'in person', 'hybrid']</p>
+<p>All fields ARE required, except for "notes" which can be left blank</p>
