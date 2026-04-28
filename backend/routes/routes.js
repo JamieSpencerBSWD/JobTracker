@@ -7,17 +7,6 @@
 // company_location, 
 // post_link, 
 // notes
-
-let jobs = [{
-    id:0, 
-    name:"Hope",
-    hometown:'virginia'
-},{
-    id:1,
-    name:"Philip",
-    hometown:'louisiana'
-}
-]
 require('dotenv').config()
 const { constants } = require('buffer');
 const mysql = require('mysql2') 
