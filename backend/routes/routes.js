@@ -44,7 +44,7 @@ exports.getJobById = (req, res) => {
 exports.deleteJobById = (req, res) => {
     connection.query(`DELETE FROM jobs WHERE id=?`, [req.params.id], (err, rows, fields) => {
         if (err) throw err
-        res.send(rows)
+        res.send({msg:"Job Deleted Successfully"})
     })    
 }
 
@@ -53,20 +53,20 @@ exports.updateJob = (req, res) => {
     const job_object = req.body
     //Iterates through the keys in job_object, and performs commands on each one
     Object.keys(job_object).forEach(key => {
-        console.log("This is job_object[key] (the value were updating to ('companyName'))", job_object[key])
-        console.log("This is Object.keys(job_object) (the request body's key ('company'))", Object.keys(job_object))
+        // console.log("This is job_object[key] (the value were updating to ('companyName'))", job_object[key])
+        // console.log("This is Object.keys(job_object) (the request body's key ('company'))", Object.keys(job_object))
         
         connection.query(`UPDATE jobs SET ${key} = ? WHERE id=?`, [job_object[key],req.params.id], (err, rows, fields) => {
             if (err) throw err
-            res.send(rows)
         }) 
     })
+    res.send({msg:"Job Updated Successfully"})
 }
 
 
 exports.createJob = (req, res) => {
     connection.query('INSERT INTO jobs (id, position, company, application_status, job_location, company_location, post_link, notes) VALUES(uuid(), ?, ?, ?, ?, ?, ?, ?)', [req.body.position, req.body.company, req.body.application_status, req.body.job_location, req.body.company_location, req.body.post_link, req.body.notes], (err, rows, fields) => {
         if (err) throw err
-        res.send(rows)
+        res.send({msg:"Job Created Successfully"})
     })
 }
