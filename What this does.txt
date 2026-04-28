@@ -1,5 +1,5 @@
 CHECKLIST:
-- Database 
-- API creation
+- Database - Done
+- API creation - Done
 - Containerize Database and API with Docker, using NginX and Load Balancing
 - Implement frontend and connect to database/API 
