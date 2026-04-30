@@ -1,32 +1,10 @@
 <script setup lang="ts">
 import dayjs from 'dayjs';
-import { ref } from 'vue';
-    interface Job {
-        id: string;
-        position: string;
-        company: string;
-        application_status: string;
-        date_applied: string;
-        updated_at: string;
-        job_location: string;
-        company_location: string;
-        post_link: string;
-        notes: string;
-    }
-    const jobs = ref<Job[]>([])
-    const getJobs = async() => {
-        try {
-            await fetch("http://localhost:3000/jobs/").then(response=>response.json()).then(jsonData=>{
-            jobs.value = jsonData;
-        }).catch(err=> {
-        console.log(err)
-        })
-        } catch (error) {
-            console.log(error)
-        }
-        
-    }
-    getJobs()
+import { onMounted, ref } from 'vue';
+import { getJobs, jobs } from '@/models/jobs';
+onMounted(() => {
+    getJobs();
+})
 </script>
 <template>
     <h1>Job Tracker</h1>
