@@ -15,7 +15,7 @@ The system is designed as a foundation for future automation, analytics, and job
 - Track job applications across multiple stages (applied, interview, offer, rejected, etc.)
 - Full CRUD functionality for applications
 - Tagging system for classification:
-  - Tech stack (React, Node, PostgreSQL, etc.)
+  - Tech stack (Vue, Node, PostgreSQL, Express)
   - Role type (Frontend, Backend, Fullstack, DevOps, etc.)
   - Source (LinkedIn, Indeed, referral, company site, etc.)
   - Priority levels (dream, high, medium, backup, etc.)
