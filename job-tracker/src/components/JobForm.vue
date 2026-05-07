@@ -2,8 +2,8 @@
 
 </script>
 <template>
-    <form action="" method="get" >
-        <div class="jobForm">
+    <form action="" method="get" class="jobForm">
+        <div>
             <label for="position">Position</label>
             <input type="text" placeholder="Software Engineer..."/>
             <label for="company">Company</label>
@@ -33,5 +33,9 @@
     </form>
 </template>
 <style scoped>
-
+.jobForm{
+    border-radius: 25px;
+    border: 2px solid lime;
+    padding: 1em;
+}
 </style>

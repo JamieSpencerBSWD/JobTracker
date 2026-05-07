@@ -15,9 +15,9 @@ export type Job = {
 export const jobs = ref<Job[]>([])
 export const getJobs = async() => {
     try {
-        await fetch("http://localhost:3000/jobs/").then(response=>response.json()).then(jsonData=>{
-        jobs.value = jsonData;
-    }).catch(err=> {
+        const response = await fetch("http://localhost:3000/jobs/")
+        jobs.value = await response.json()
+    .catch(err=> {
     console.log(err)
     })
     } catch (error) {
