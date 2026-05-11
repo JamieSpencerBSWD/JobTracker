@@ -2,6 +2,7 @@
 
 //Backend will be created with Express/NodeJS and the databse will be managed through Postgres
 const routes = require('./routes/routes')
+const getroutes = require('./routes/getRoutes')
 
 const express = require('express');
 
@@ -16,7 +17,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/', routes.index)
+app.get('/', getroutes.index)
 /**
  * GET
  *  jobs
@@ -27,24 +28,24 @@ app.get('/', routes.index)
 */
 
 //GET JOBS
-app.get('/jobs', routes.getAllJobs)
-app.get('/jobs/:id', routes.getJobById)
+app.get('/jobs', getroutes.getAllJobs)
+app.get('/jobs/:id', getroutes.getJobById)
 
 //GET USERS
-app.get('/users', routes.getAllUsers)
-app.get('/users/:id', routes.getUserById)
+app.get('/users', getroutes.getAllUsers)
+app.get('/users/:id', getroutes.getUserById)
 
 //GET APPLICATIONS
-app.get('/applications', routes.getAllApplications)
-app.get('/applicationss/:id', routes.getApplicationById)
+app.get('/applications', getroutes.getAllApplications)
+app.get('/applicationss/:id', getroutes.getApplicationById)
 
 //GET TAGS
-app.get('/tags', routes.getAllTags)
-app.get('/tags/:id', routes.getTagById)
+app.get('/tags', getroutes.getAllTags)
+app.get('/tags/:id', getroutes.getTagById)
 
 //GET JOB TAGS
-app.get('/job_tags', routes.getAllJobTags)
-app.get('/job_tags/:id', routes.getJobTagById)
+app.get('/job_tags', getroutes.getAllJobTags)
+app.get('/job_tags/:id', getroutes.getJobTagById)
 
 /**
  * POST
