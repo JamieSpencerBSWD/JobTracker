@@ -11,7 +11,7 @@
 // const path = require('path');
 // const pgpromise = require('pg-promise')(/* options */)
 // const database = pgpromise(`postgres://${process.env.POSTGRES_USERNAME}:${process.env.POSTGRES_PASSWORD}@${process.env.POSTGRES_HOST}:${process.env.POSTGRES_PORT}/${process.env.POSTGRES_DATABASE}`)
-const database = require('../database')
+const database = require('../database/dbconn')
 
 const allowedTables = ["jobs", "applications", "users", "tags", "job_tags"];
 

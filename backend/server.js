@@ -3,6 +3,7 @@
 //Backend will be created with Express/NodeJS and the databse will be managed through Postgres
 const routes = require('./routes/routes')
 const getroutes = require('./routes/getRoutes')
+const postroutes = require('./routes/postRoutes')
 
 const express = require('express');
 
@@ -56,7 +57,8 @@ app.get('/job_tags/:id', getroutes.getJobTagById)
  *  job_tags
 */
 
-app.post('/jobs', routes.createJob)
+app.post('/jobs', postroutes.createNewJob)
+app.post('/users', postroutes.createNewUser)
 
 /**
  * PATCH

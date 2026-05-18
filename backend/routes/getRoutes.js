@@ -1,4 +1,4 @@
-const database = require('../database')
+const database = require('../database/dbconn')
 const path = require('path');
 exports.index = (req, res) => {
     //When someone makes a request on the root level of a web server, respond with this html file
@@ -14,10 +14,6 @@ exports.getAllJobs = (req, res) => {
     .catch((error) => {
         console.log('ERROR:', error)
     })
-    // connection.query(`SELECT * FROM jobs WHERE id=?`,[req.params.id], (err, rows, fields) => {
-    //     if (err) throw err
-    //     res.send(rows)
-    // })
 }
 
 exports.getJobById = (req, res) => {
@@ -29,10 +25,6 @@ exports.getJobById = (req, res) => {
     .catch((error) => {
         console.log('ERROR:', error)
     })
-    // connection.query(`SELECT * FROM jobs WHERE id=?`,[req.params.id], (err, rows, fields) => {
-    //     if (err) throw err
-    //     res.send(rows)
-    // })
 }
 
 exports.getAllApplications = (req, res) => {
@@ -44,10 +36,6 @@ exports.getAllApplications = (req, res) => {
     .catch((error) => {
         console.log('ERROR:', error)
     })
-    // connection.query(`SELECT * FROM jobs WHERE id=?`,[req.params.id], (err, rows, fields) => {
-    //     if (err) throw err
-    //     res.send(rows)
-    // })
 }
 
 exports.getApplicationById = (req, res) => {
@@ -59,10 +47,6 @@ exports.getApplicationById = (req, res) => {
     .catch((error) => {
         console.log('ERROR:', error)
     })
-    // connection.query(`SELECT * FROM jobs WHERE id=?`,[req.params.id], (err, rows, fields) => {
-    //     if (err) throw err
-    //     res.send(rows)
-    // })
 }
 
 exports.getAllUsers = (req, res) => {
@@ -74,10 +58,6 @@ exports.getAllUsers = (req, res) => {
     .catch((error) => {
         console.log('ERROR:', error)
     })
-    // connection.query(`SELECT * FROM jobs WHERE id=?`,[req.params.id], (err, rows, fields) => {
-    //     if (err) throw err
-    //     res.send(rows)
-    // })
 }
 
 exports.getUserById = (req, res) => {
@@ -89,10 +69,6 @@ exports.getUserById = (req, res) => {
     .catch((error) => {
         console.log('ERROR:', error)
     })
-    // connection.query(`SELECT * FROM jobs WHERE id=?`,[req.params.id], (err, rows, fields) => {
-    //     if (err) throw err
-    //     res.send(rows)
-    // })
 }
 
 exports.getAllJobTags = (req, res) => {
@@ -104,10 +80,6 @@ exports.getAllJobTags = (req, res) => {
     .catch((error) => {
         console.log('ERROR:', error)
     })
-    // connection.query(`SELECT * FROM jobs WHERE id=?`,[req.params.id], (err, rows, fields) => {
-    //     if (err) throw err
-    //     res.send(rows)
-    // })
 }
 
 exports.getJobTagById = (req, res) => {
@@ -119,10 +91,6 @@ exports.getJobTagById = (req, res) => {
     .catch((error) => {
         console.log('ERROR:', error)
     })
-    // connection.query(`SELECT * FROM jobs WHERE id=?`,[req.params.id], (err, rows, fields) => {
-    //     if (err) throw err
-    //     res.send(rows)
-    // })
 }
 
 exports.getAllTags = (req, res) => {
@@ -134,10 +102,6 @@ exports.getAllTags = (req, res) => {
     .catch((error) => {
         console.log('ERROR:', error)
     })
-    // connection.query(`SELECT * FROM jobs WHERE id=?`,[req.params.id], (err, rows, fields) => {
-    //     if (err) throw err
-    //     res.send(rows)
-    // })
 }
 
 exports.getTagById = (req, res) => {
@@ -149,8 +113,4 @@ exports.getTagById = (req, res) => {
     .catch((error) => {
         console.log('ERROR:', error)
     })
-    // connection.query(`SELECT * FROM jobs WHERE id=?`,[req.params.id], (err, rows, fields) => {
-    //     if (err) throw err
-    //     res.send(rows)
-    // })
 }
