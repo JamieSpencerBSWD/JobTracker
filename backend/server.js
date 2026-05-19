@@ -1,11 +1,11 @@
 //This is where I will make and relearn Node and JavaScript as well as Express for creating API's :3
 
 //Backend will be created with Express/NodeJS and the databse will be managed through Postgres
-const routes = require('./routes/routes')
-const getroutes = require('./routes/getRoutes')
-const postroutes = require('./routes/postRoutes')
-
 const express = require('express');
+
+const routes = require('./routes/routes');
+const getroutes = require('./routes/getRoutes');
+const postroutes = require('./routes/postRoutes');
 
 const app = express();
 
@@ -17,6 +17,17 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
   next();
 });
+
+//app.request('/', middleware function, controller function)
+//request = get, post, put, patch, delete
+//controller = functions like getRoutes.getUserById
+
+/*
+  middlewareFunction(req, res, next)
+
+  if middleware succeeded:
+      controllerFunction(req, res)
+*/
 
 app.get('/', getroutes.index)
 /**

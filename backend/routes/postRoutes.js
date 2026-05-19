@@ -1,5 +1,6 @@
 const database = require('../database/dbconn')
 const bcrypt = require('bcrypt');
+const { query, body } = require('express-validator');
 const path = require('path');
 exports.index = (req, res) => {
     //When someone makes a request on the root level of a web server, respond with this html file
@@ -46,14 +47,14 @@ exports.createNewApplication = (req, res) => {
 exports.createNewUser = (req, res) => {
     // VALIDATE THAT THE USER HAS THE CORRECT BODY SENT THROUGH
         //If not, return an error and stop the operation
-
+    console.log(req.body);
     // HASH PASSWORD WITH BCRYPT ON THE Backend
     // authentication is handdled in the middleware
     
         // INSERT INTO users (email, password)
         // VALUES
         // ('hope@example.com', 'hashed_password_123');
-    
+
     // HASH PASSWORD:
         //BCrypt Hashing
         //Get password from middleware or request body
@@ -70,14 +71,14 @@ exports.createNewUser = (req, res) => {
     //BELOW IS THE DATABASE connection
 
 
-    // database.manyOrNone('SELECT * FROM users')
-    // .then((data) => {
-    //     console.log('DATA:', data)
-    //     res.send(data)
-    // })
-    // .catch((error) => {
-    //     console.log('ERROR:', error)
-    // })
+    database.manyOrNone('SELECT * FROM users')
+    .then((data) => {
+        //console.log('DATA:', data)
+        res.send(data)
+    })
+    .catch((error) => {
+        console.log('ERROR:', error)
+    })
 }
 
 exports.createNewJobTag = (req, res) => {
